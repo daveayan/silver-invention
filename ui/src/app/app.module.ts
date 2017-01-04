@@ -4,17 +4,27 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { MaterialModule} from '@angular/material';
 
+import { AppRouter } from './app.router';
 import { AppComponent } from './app.component';
+import { TeacherDashboardComponent } from './pages/teacher-dashboard/teacher-dashboard.component';
+import { StudentDashboardComponent } from './pages/student-dashboard/student-dashboard.component';
+import { ClassDashboardComponent } from './pages/class-dashboard/class-dashboard.component';
+import { LoginComponent } from './pages/login/login.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TeacherDashboardComponent,
+    StudentDashboardComponent,
+    ClassDashboardComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    MaterialModule.forRoot()
+    MaterialModule.forRoot(),
+    AppRouter
   ],
   providers: [],
   bootstrap: [AppComponent]
