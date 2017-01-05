@@ -1,5 +1,15 @@
 <p>
   <md-card>
-    new-teacher works!
+    <form>
+      <div>
+        <md-input placeholder="name" name="name" [(ngModel)]="newTeacher.name" required></md-input>
+      </div>
+      <div>
+        <md-input placeholder="join date" name="joindate" [(ngModel)]="newTeacher.joindate" required></md-input>
+      </div>
+
+      <button md-raised-button color="primary" type="submit">Save</button>
+      <hr>
+    </form>
   </md-card>
 </p>

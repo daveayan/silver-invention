@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Teacher} from '../../../model/Teacher';
 
 @Component({
   selector: 'app-new-teacher',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewTeacherComponent implements OnInit {
 
+  private newTeacher: Teacher;
+
   constructor() { }
 
   ngOnInit() {
+    this.newTeacher = new Teacher();
   }
 
 }
