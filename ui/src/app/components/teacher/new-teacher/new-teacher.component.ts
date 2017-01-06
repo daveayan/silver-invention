@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Teacher} from '../../../model/Teacher';
+import {AppService} from '../../../services/app.service';
 
 @Component({
   selector: 'app-new-teacher',
@@ -10,10 +11,14 @@ export class NewTeacherComponent implements OnInit {
 
   private newTeacher: Teacher;
 
-  constructor() { }
+  constructor(private appService: AppService) { }
 
   ngOnInit() {
     this.newTeacher = new Teacher();
+  }
+
+  addNewTeacher() {
+    this.appService.addNewTeacher();
   }
 
 }
