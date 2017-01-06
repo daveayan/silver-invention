@@ -12,6 +12,7 @@ import { ClassDashboardComponent } from './pages/class-dashboard/class-dashboard
 import { LoginComponent } from './pages/login/login.component';
 import { NewTeacherComponent } from './components/teacher/new-teacher/new-teacher.component';
 import { ListTeachersComponent } from './components/teacher/list-teachers/list-teachers.component';
+import { AppService } from './services/app.service';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,9 @@ import { ListTeachersComponent } from './components/teacher/list-teachers/list-t
     MaterialModule.forRoot(),
     AppRouter
   ],
-  providers: [],
+  providers: [
+    AppService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

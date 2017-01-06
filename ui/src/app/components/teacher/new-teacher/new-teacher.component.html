@@ -1,6 +1,6 @@
 <p>
   <md-card>
-    <form>
+    <form (ngSubmit)="addNewTeacher()">
       <div>
         <md-input placeholder="name" name="name" [(ngModel)]="newTeacher.name" required></md-input>
       </div>

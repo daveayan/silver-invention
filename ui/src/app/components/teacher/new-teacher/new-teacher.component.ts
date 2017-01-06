@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {Teacher} from '../../../model/Teacher';
-import {AppService} from '../../../services/app.service';
+import { Teacher } from '../../../model/Teacher';
+import { AppService } from '../../../services/app.service';
 
 @Component({
   selector: 'app-new-teacher',
