@@ -9,7 +9,6 @@ export class TeacherDashboardComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
 }

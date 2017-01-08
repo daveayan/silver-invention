@@ -4,6 +4,9 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { MaterialModule} from '@angular/material';
 
+import { InMemoryWebApiModule } from 'angular2-in-memory-web-api';
+import { InMemoryDataService }  from './services/in-memory-data.service';
+
 import { AppRouter } from './app.router';
 import { AppComponent } from './app.component';
 import { TeacherDashboardComponent } from './pages/teacher-dashboard/teacher-dashboard.component';
@@ -13,6 +16,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { NewTeacherComponent } from './components/teacher/new-teacher/new-teacher.component';
 import { ListTeachersComponent } from './components/teacher/list-teachers/list-teachers.component';
 import { AppService } from './services/app.service';
+import { ComponentCommunicationService } from './services/component-communication.service';
 
 @NgModule({
   declarations: [
@@ -28,11 +32,13 @@ import { AppService } from './services/app.service';
     BrowserModule,
     FormsModule,
     HttpModule,
+    InMemoryWebApiModule.forRoot(InMemoryDataService),
     MaterialModule.forRoot(),
     AppRouter
   ],
   providers: [
-    AppService
+    AppService,
+    ComponentCommunicationService
   ],
   bootstrap: [AppComponent]
 })

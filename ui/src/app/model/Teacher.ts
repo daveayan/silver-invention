@@ -1,4 +1,4 @@
 export class Teacher {
   name: string;
-  joined: string;
+  joindate: string;
 }
