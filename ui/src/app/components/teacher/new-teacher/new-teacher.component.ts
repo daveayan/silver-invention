@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UUID } from 'angular2-uuid';
 
 import { Teacher } from '../../../model/Teacher';
 import { AppService } from '../../../services/app.service';
@@ -22,6 +23,7 @@ export class NewTeacherComponent implements OnInit {
 
   addNewTeacher() {
     let t = new Teacher();
+    t.id = UUID.UUID();
     t.name = this.newTeacher.name;
     t.joindate = this.newTeacher.joindate;
     this.appService.addNewTeacher(t).then(res => this.componentCommunicationService.newTeacherAdded(t));

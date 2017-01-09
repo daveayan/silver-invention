@@ -4,6 +4,7 @@ import { Headers, Http } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 
 import { Teacher } from '../model/Teacher';
+import { UUID } from 'angular2-uuid';
 
 @Injectable()
 export class AppService {
@@ -26,6 +27,18 @@ export class AppService {
       .toPromise()
       .then(response => response.json().data as Teacher[])
       .catch(this.handleError);
+  }
+
+  removeTeacher(teacherIdToRemove: UUID) {
+    let resp = this.http
+      .delete(this.teachersApi + '/' + teacherIdToRemove, {headers: this.headers})
+      .toPromise()
+      .then(() => null)
+      .catch(this.handleError);
+
+    console.log(resp);
+
+    return resp;  
   }
 
   private handleError(error: any): Promise<any> {
