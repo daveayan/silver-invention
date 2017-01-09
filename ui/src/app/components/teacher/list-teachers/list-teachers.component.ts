@@ -27,4 +27,8 @@ export class ListTeachersComponent implements OnInit {
         .then(teachers => this.allTeachers = teachers);
   }
 
+  remove(teacher) {
+    console.log('Remove ' + teacher.name);
+  }
+
 }

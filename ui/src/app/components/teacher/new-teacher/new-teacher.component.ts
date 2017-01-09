@@ -13,7 +13,8 @@ export class NewTeacherComponent implements OnInit {
 
   private newTeacher: Teacher;
 
-  constructor(private appService: AppService, private componentCommunicationService: ComponentCommunicationService) { }
+  constructor(private appService: AppService,
+    private componentCommunicationService: ComponentCommunicationService) { }
 
   ngOnInit() {
     this.newTeacher = new Teacher();
@@ -23,8 +24,7 @@ export class NewTeacherComponent implements OnInit {
     let t = new Teacher();
     t.name = this.newTeacher.name;
     t.joindate = this.newTeacher.joindate;
-    this.appService.addNewTeacher(t);
-    this.componentCommunicationService.newTeacherAdded(t);
+    this.appService.addNewTeacher(t).then(res => this.componentCommunicationService.newTeacherAdded(t));
   }
 
 }
