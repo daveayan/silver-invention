@@ -1,3 +1,10 @@
+[![CircleCI](https://circleci.com/gh/daveayan/silver-invention-ui.svg?style=svg)](https://circleci.com/gh/daveayan/silver-invention-ui)
+[![Code Climate](https://codeclimate.com/github/daveayan/silver-invention-ui/badges/gpa.svg)](https://codeclimate.com/github/daveayan/silver-invention-ui)
+[![Test Coverage](https://codeclimate.com/github/daveayan/silver-invention-ui/badges/coverage.svg)](https://codeclimate.com/github/daveayan/silver-invention-ui/coverage)
+[![Issue Count](https://codeclimate.com/github/daveayan/silver-invention-ui/badges/issue_count.svg)](https://codeclimate.com/github/daveayan/silver-invention-ui)
+[![Dependency Status](https://gemnasium.com/badges/github.com/daveayan/silver-invention-ui.svg)](https://gemnasium.com/github.com/daveayan/silver-invention-ui)
+[![License](http://img.shields.io/:license-mit-blue.svg)](http://doge.mit-license.org)
+
 # SilverInventionUi
 
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.24.
