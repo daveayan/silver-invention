@@ -7,8 +7,8 @@ export class InMemoryDataService {
 
   createDb() {
     let teachers = [
-      { id: UUID.UUID(), name: 'Mr. Nice' },
-      { id: UUID.UUID(), name: 'Narco' }
+      { id: UUID.UUID(), name: 'Charles Xavier' },
+      { id: UUID.UUID(), name: 'Peter Parker' }
     ];
     let students = [
       { id: UUID.UUID(), name: 'Magneta' },

@@ -2,7 +2,7 @@
   <md-card>
     <md-list>
       <md-list-item *ngFor="let loopTeacher of allTeachers">
-        {{loopTeacher.id}}, {{loopTeacher.name}}
+        {{loopTeacher.name}}
         <span>
           &nbsp;&nbsp;&nbsp;
           <button md-mini-fab (click)="remove(loopTeacher);">
