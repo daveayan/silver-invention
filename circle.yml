@@ -11,5 +11,4 @@ test:
         background: true
     - sleep 5
   override:
-    - ng test --single-run --code-coverage
     - ng e2e
