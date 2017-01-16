@@ -12,7 +12,6 @@ import { AppComponent } from './app.component';
 import { TeacherDashboardComponent } from './pages/teacher-dashboard/teacher-dashboard.component';
 import { StudentDashboardComponent } from './pages/student-dashboard/student-dashboard.component';
 import { ClassDashboardComponent } from './pages/class-dashboard/class-dashboard.component';
-import { LoginComponent } from './pages/login/login.component';
 import { NewTeacherComponent } from './components/teacher/new-teacher/new-teacher.component';
 import { ListTeachersComponent } from './components/teacher/list-teachers/list-teachers.component';
 import { AppService } from './services/app.service';
@@ -24,7 +23,6 @@ import { ComponentCommunicationService } from './services/component-communicatio
     TeacherDashboardComponent,
     StudentDashboardComponent,
     ClassDashboardComponent,
-    LoginComponent,
     NewTeacherComponent,
     ListTeachersComponent
   ],
