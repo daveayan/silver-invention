@@ -12,4 +12,4 @@ test:
     - sleep 5
   override:
     - ng test --single-run --code-coverage
-    - npm e2e
+    - ng e2e
