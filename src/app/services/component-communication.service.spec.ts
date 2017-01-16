@@ -10,7 +10,7 @@ describe('ComponentCommunicationService', () => {
     });
   });
 
-  it('should ...', inject([ComponentCommunicationService], (service: ComponentCommunicationService) => {
-    expect(service).toBeTruthy();
-  }));
+  // it('should ...', inject([ComponentCommunicationService], (service: ComponentCommunicationService) => {
+  //   expect(service).toBeTruthy();
+  // }));
 });

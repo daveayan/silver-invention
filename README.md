@@ -19,6 +19,10 @@
 - In Memory DB for local development of API consumption
 - Hammer JS for device interaction
 
+## Gotcha's
+- Run Karma Tests in single run mode, https://github.com/angular/angular-cli/issues/978#issuecomment-223051729
+- Add a line to karma.conf.js. Without this the spec.ts files in subfolders are not picked up, https://github.com/angular/angular-cli/issues/2838#issuecomment-265782400
+
 ## Development server
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
