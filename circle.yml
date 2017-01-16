@@ -15,4 +15,5 @@ test:
     - ng test --single-run --code-coverage
     - ng e2e
   post:
-    - codeclimate-test-reporter < coverage/lcov.info  
+    - codeclimate-test-reporter < coverage/coverage.lcov
+    
