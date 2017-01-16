@@ -2,6 +2,7 @@
 dependencies: 
   pre: 
     - "npm install angular-cli@latest -g"
+    - "npm install codeclimate-test-reporter -g"
 machine: 
   node: 
     version: "6.9.4"
@@ -13,3 +14,5 @@ test:
   override:
     - ng test --single-run --code-coverage
     - ng e2e
+  post:
+    - codeclimate-test-reporter < coverage/lcov.info  
