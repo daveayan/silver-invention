@@ -5,3 +5,6 @@ dependencies:
 machine: 
   node: 
     version: "6.9.4"
+test: 
+  pre: 
+    - "npm start"
