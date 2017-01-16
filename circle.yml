@@ -6,5 +6,7 @@ machine:
   node: 
     version: "6.9.4"
 test: 
-  pre: 
-    - "npm start"
+  pre:
+    - npm start:
+        background: true
+    - sleep 5
