@@ -1,0 +1,13 @@
+<p>
+  <md-card>
+    <md-list id="idListOfStudents">
+      <md-list-item *ngFor="let loopStudent of allStudents">
+        {{loopStudent.name}}, Grade {{loopStudent.gradeLevel}}
+          &nbsp;&nbsp;&nbsp;
+          <button md-mini-fab (click)="remove(loopStudent);">
+            <md-icon class="md-24">-</md-icon>
+          </button>
+      </md-list-item>
+    </md-list>
+  </md-card>
+</p>

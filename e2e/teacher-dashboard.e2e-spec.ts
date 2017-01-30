@@ -1,5 +1,5 @@
-import { NewTeacherPageObject } from './new-teacher.po';
-import { ListTeacherPageObject } from './list-teacher.po';
+import { NewTeacherPageObject } from './po/new-teacher.po';
+import { ListTeacherPageObject } from './po/list-teacher.po';
 
 describe('Teacher Dashboard Page', function() {
   let newTeacherPO: NewTeacherPageObject;
@@ -30,10 +30,6 @@ describe('Teacher Dashboard Page', function() {
     listTeacherPO.removeTeacher('Peter Parker');
     listTeacherPO.listShouldHave('Charles Xavier');
     listTeacherPO.listShouldHave('Clark Kent');
-    listTeacherPO.listNotShouldHave('Peter Parker');
-  });
-
-  it('can add teachers', () => {
-    newTeacherPO.addTeacher('Clark Kent', '01/10/2010');
+    listTeacherPO.listShouldNotHave('Peter Parker');
   });
 });

@@ -25,7 +25,7 @@ export class NewTeacherComponent implements OnInit {
     let t = new Teacher();
     t.id = UUID.UUID();
     t.name = this.newTeacher.name;
-    t.joindate = this.newTeacher.joindate;
+    t.joinDate = this.newTeacher.joinDate;
     this.appService.addNewTeacher(t).then(res => this.componentCommunicationService.newTeacherAdded(t));
   }
 

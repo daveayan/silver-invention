@@ -1,7 +1,7 @@
 import { UUID } from 'angular2-uuid';
 
-export class Teacher {
+export class Class {
   id: UUID;
   name: string;
-  joinDate: string;
+  startDate: string;
 }

@@ -1,0 +1,15 @@
+<p>
+  <md-card>
+    <form (ngSubmit)="addNewStudent()">
+      <div>
+        <md-input id="idNewStudentStudentName" placeholder="Name" name="name" [(ngModel)]="newStudent.name" required i18n></md-input>
+      </div>
+      <div>
+        <md-input id="idNewStudentGradeLevel" placeholder="Grade Level" name="gradeLevel" [(ngModel)]="newStudent.gradeLevel" required></md-input>
+      </div>
+
+      <button id="idNewStudentSaveButton" md-raised-button color="primary" type="submit" i18n>Save</button>
+      <hr>
+    </form>
+  </md-card>
+</p>

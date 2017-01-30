@@ -1,0 +1,15 @@
+<p>
+  <md-card>
+    <form (ngSubmit)="addNewClass()">
+      <div>
+        <md-input id="idNewClassClassName" placeholder="Name" name="name" [(ngModel)]="newClass.name" required i18n></md-input>
+      </div>
+      <div>
+        <md-input id="idNewClassStartDate" placeholder="Start Date" name="startDate" [(ngModel)]="newClass.startDate" required></md-input>
+      </div>
+
+      <button id="idNewClassSaveButton" md-raised-button color="primary" type="submit" i18n>Save</button>
+      <hr>
+    </form>
+  </md-card>
+</p>

@@ -7,14 +7,18 @@ export class InMemoryDataService {
 
   createDb() {
     let teachers = [
-      { id: UUID.UUID(), name: 'Charles Xavier' },
-      { id: UUID.UUID(), name: 'Peter Parker' }
+      { id: UUID.UUID(), name: 'Charles Xavier', joinDate: '01/01/2009' },
+      { id: UUID.UUID(), name: 'Peter Parker', joinDate: '02/02/2010' }
     ];
     let students = [
-      { id: UUID.UUID(), name: 'Magneta' },
-      { id: UUID.UUID(), name: 'Tornado' }
+      { id: UUID.UUID(), name: 'Magneta', gradeLevel: '1' },
+      { id: UUID.UUID(), name: 'Tornado', gradeLevel: 'K' }
     ];
-    return { teachers, students };
+    let classes = [
+      { id: UUID.UUID(), name: 'Monday Class', startDate: '08/01/2016' },
+      { id: UUID.UUID(), name: 'Wednesday Class', startDate: '08/03/2016' }
+    ];
+    return { teachers, students, classes };
 
   }
 }

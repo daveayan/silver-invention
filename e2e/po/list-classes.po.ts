@@ -1,10 +1,10 @@
 import { browser, element, by } from 'protractor';
 
-export class ListTeacherPageObject {
-  listOfTeachersElement = element(by.id('idListOfTeachers'));
+export class ListClassPageObject {
+  listOfClassesElement = element(by.id('idListOfClasses'));
 
   listShouldHave(name) {
-    let promiseListOfNames = this.listOfTeachersElement.all(by.className('md-list-item')).map(function(e) {
+    let promiseListOfNames = this.listOfClassesElement.all(by.className('md-list-item')).map(function(e) {
       return e.getText();
     });
     promiseListOfNames.then(function(textListOfNames) {
@@ -12,8 +12,8 @@ export class ListTeacherPageObject {
     });
   }
 
-  listNotShouldHave(name) {
-    let promiseListOfNames = this.listOfTeachersElement.all(by.className('md-list-item')).map(function(e) {
+  listShouldNotHave(name) {
+    let promiseListOfNames = this.listOfClassesElement.all(by.className('md-list-item')).map(function(e) {
       return e.getText();
     });
     promiseListOfNames.then(function(textListOfNames) {
@@ -21,9 +21,9 @@ export class ListTeacherPageObject {
     });
   }
 
-  removeTeacher(name) {
+  removeClass(name) {
     const expectedName = name + '    \n-';
-    let promiseListOfNames = this.listOfTeachersElement.all(by.className('md-list-item')).map(function(e) {
+    let promiseListOfNames = this.listOfClassesElement.all(by.className('md-list-item')).map(function(e) {
       let removeButton = e.element(by.tagName('button'));
       e.getText().then(function(ve) {
         if (expectedName === ve) {
@@ -34,6 +34,6 @@ export class ListTeacherPageObject {
     });
   }
 
-  validateIntegrityOfListTeachersComponent() {
+  validateIntegrityOfListClassesComponent() {
   }
 }
