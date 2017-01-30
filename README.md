@@ -23,6 +23,18 @@
 - Run Karma Tests in single run mode, https://github.com/angular/angular-cli/issues/978#issuecomment-223051729
 - Add a line to karma.conf.js. Without this the spec.ts files in subfolders are not picked up, https://github.com/angular/angular-cli/issues/2838#issuecomment-265782400
 
+## i18n
+- https://medium.com/@feloy/deploying-an-i18n-angular-app-with-angular-cli-fc788f17e358#.4r52hs298
+- When developing
+  - ng serve --aot --i18n-file=src/i18n/messages.es.xlf --locale=es --i18n-format=xlf
+- Production Ready
+  - npm run build-i18n
+  - http-server dist/
+  - http://localhost:8080/en
+  - http://localhost:8080/es
+  - http://localhost:8080/fr
+  - If you add more languages modify the build-i18n script in package.json
+
 ## Development server
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 

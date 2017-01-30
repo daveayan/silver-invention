@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="6237ff3a29d96a2418eb0007bebc0be1dda21cdd" datatype="html">
+        <source>Teacher</source>
+        <target>Prof</target>
+      </trans-unit>
+      <trans-unit id="61727bf4fa2cb34dc5bdf598b6cb917d0c44ac86" datatype="html">
+        <source>Student</source>
+        <target>Étudiant</target>
+      </trans-unit>
+      <trans-unit id="f60c6c571ed1e6266976ca261a2b2d0ebaa16c6e" datatype="html">
+        <source>Class</source>
+        <target>Classe</target>
+      </trans-unit>
+      <trans-unit id="f60c6c371ed1e6266976ca261a2b2d0ebaa16c6e" datatype="html">
+        <source>name</source>
+        <target>prénom</target>
+      </trans-unit>
+      <trans-unit id="f60c6c571ed146266976ca261a2b2d0ebaa16c6e" datatype="html">
+        <source>join date</source>
+        <target>Date d'inscription</target>
+      </trans-unit>
+      <trans-unit id="52c9a103b812f258bcddc3d90a6e3f46871d25fe" datatype="html">
+        <source>Save</source>
+        <target>Sauvegarder</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
