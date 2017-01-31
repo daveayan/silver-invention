@@ -21,12 +21,14 @@ export class NewStudentComponent implements OnInit {
     this.newStudent = new Student();
   }
 
-  addNewStudent() {
+  async addNewStudent() {
     let s = new Student();
     s.id = UUID.UUID();
     s.name = this.newStudent.name;
     s.gradeLevel = this.newStudent.gradeLevel;
-    this.appService.addNewStudent(s).then(res => this.componentCommunicationService.newStudent(s));
+    // this.appService.addNewStudent(s).then(res => this.componentCommunicationService.newStudent(s));
+    const storageServiceResponse = await this.appService.addNewStudent(s);
+    this.componentCommunicationService.newStudent(s);
   }
 
 }

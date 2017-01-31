@@ -21,12 +21,14 @@ export class NewClassComponent implements OnInit {
     this.newClass = new Class();
   }
 
-  addNewClass() {
+  async addNewClass() {
     let c = new Class();
     c.id = UUID.UUID();
     c.name = this.newClass.name;
     c.startDate = this.newClass.startDate;
-    this.appService.addNewClass(c).then(res => this.componentCommunicationService.newClass(c));
+    // this.appService.addNewClass(c).then(res => this.componentCommunicationService.newClass(c));
+    const storageServiceResponse = await this.appService.addNewClass(c);
+    this.componentCommunicationService.newClass(c);
   }
 
 }

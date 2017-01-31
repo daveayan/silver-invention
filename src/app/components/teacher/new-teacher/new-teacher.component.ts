@@ -21,12 +21,14 @@ export class NewTeacherComponent implements OnInit {
     this.newTeacher = new Teacher();
   }
 
-  addNewTeacher() {
+  async addNewTeacher() {
     let t = new Teacher();
     t.id = UUID.UUID();
     t.name = this.newTeacher.name;
     t.joinDate = this.newTeacher.joinDate;
-    this.appService.addNewTeacher(t).then(res => this.componentCommunicationService.newTeacherAdded(t));
+
+    const storageServiceResponse = await this.appService.addNewTeacher(t);
+    this.componentCommunicationService.newTeacherAdded(t);
   }
 
 }

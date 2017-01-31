@@ -21,18 +21,12 @@ export class ListStudentsComponent implements OnInit {
     });
   }
 
-  ngOnInit() {
-    this.appService
-        .getStudents()
-        .then(students => this.allStudents = students);
+  async ngOnInit() {
+    this.allStudents = await this.appService.getStudents();
   }
 
-  remove(studentToRemove) {
-    this.appService
-      .removeStudent(studentToRemove.id)
-      .then(() => {
-          this.allStudents = this.allStudents.filter(t => t !== studentToRemove);
-        });
+  async remove(studentToRemove) {
+    await this.appService.removeStudent(studentToRemove.id);
+    this.allStudents = this.allStudents.filter(t => t !== studentToRemove);
   }
-
 }

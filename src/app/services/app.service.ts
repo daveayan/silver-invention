@@ -17,89 +17,66 @@ export class AppService {
 
   constructor(private http: Http) { }
 
-  addNewTeacher(newTeacher: Teacher) {
-    return this.http
+  async addNewTeacher(newTeacher: Teacher) {
+    const response = await this.http
       .post(this.teachersApi, JSON.stringify(newTeacher), {headers: this.headers})
-      .toPromise()
-      .then(res => res.json().data)
-      .catch(this.handleError);
+      .toPromise();
+    return response.json().data;
   }
 
-  getTeachers() {
-    return this.http.get(this.teachersApi)
-      .toPromise()
-      .then(response => response.json().data as Teacher[])
-      .catch(this.handleError);
+  async getTeachers() {
+    const response = await this.http.get(this.teachersApi).toPromise();
+    return response.json().data as Teacher[];
   }
 
-  removeTeacher(teacherIdToRemove: UUID) {
-    let resp = this.http
+  async removeTeacher(teacherIdToRemove: UUID) {
+    const response = await this.http
       .delete(this.teachersApi + '/' + teacherIdToRemove, {headers: this.headers})
-      .toPromise()
-      .then(() => null)
-      .catch(this.handleError);
+      .toPromise();
 
-    console.log('Removed Teacher: ' + resp);
-
-    return resp;
+    console.log('Removed Teacher: ' + response);
+    return true;
   }
 
-  addNewStudent(newStudent: Student) {
-    return this.http
+  async addNewStudent(newStudent: Student) {
+    const response = await this.http
       .post(this.studentsApi, JSON.stringify(newStudent), {headers: this.headers})
-      .toPromise()
-      .then(res => res.json().data)
-      .catch(this.handleError);
+      .toPromise();
+    return response.json().data;
   }
 
-  getStudents() {
-    return this.http.get(this.studentsApi)
-      .toPromise()
-      .then(response => response.json().data as Student[])
-      .catch(this.handleError);
+  async getStudents() {
+    const response = await this.http.get(this.studentsApi).toPromise();
+    return response.json().data as Student[];
   }
 
-  removeStudent(studentIdToRemove: UUID) {
-    let resp = this.http
+  async removeStudent(studentIdToRemove: UUID) {
+    const response = await this.http
       .delete(this.studentsApi + '/' + studentIdToRemove, {headers: this.headers})
-      .toPromise()
-      .then(() => null)
-      .catch(this.handleError);
+      .toPromise();
 
-    console.log('Removed Student: ' + resp);
-
-    return resp;
+    console.log('Removed Student: ' + response);
+    return true;
   }
 
-  addNewClass(newClass: Class) {
-    return this.http
+  async addNewClass(newClass: Class) {
+    const response = await this.http
       .post(this.classesApi, JSON.stringify(newClass), {headers: this.headers})
-      .toPromise()
-      .then(res => res.json().data)
-      .catch(this.handleError);
+      .toPromise();
+    return response.json().data;
   }
 
-  getClasses() {
-    return this.http.get(this.classesApi)
-      .toPromise()
-      .then(response => response.json().data as Class[])
-      .catch(this.handleError);
+  async getClasses() {
+    const response = await this.http.get(this.classesApi).toPromise();
+    return response.json().data as Class[];
   }
 
-  removeClass(classIdToRemove: UUID) {
-    let resp = this.http
+  async removeClass(classIdToRemove: UUID) {
+    const response = await this.http
       .delete(this.classesApi + '/' + classIdToRemove, {headers: this.headers})
-      .toPromise()
-      .then(() => null)
-      .catch(this.handleError);
+      .toPromise();
 
-    console.log('Removed Class: ' + resp);
-
-    return resp;
-  }
-
-  private handleError(error: any): Promise<any> {
-    console.error('An error occurred', error);
-    return Promise.reject(error.message || error);
+    console.log('Removed Class: ' + response);
+    return true;
   }
 }
