@@ -18,6 +18,8 @@
 - Observables based component communication
 - In Memory DB for local development of API consumption
 - Hammer JS for device interaction
+- Internationalization
+- async / await
 
 ## Gotcha's
 - Run Karma Tests in single run mode, https://github.com/angular/angular-cli/issues/978#issuecomment-223051729
