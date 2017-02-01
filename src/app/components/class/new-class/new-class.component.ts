@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UUID } from 'angular2-uuid';
 
 import { Class } from '../../../model/Class';
-import { AppService } from '../../../services/app.service';
+import { StorageService } from '../../../services/storage.service';
 import { ComponentCommunicationService } from '../../../services/component-communication.service';
 
 @Component({
@@ -14,7 +14,7 @@ export class NewClassComponent implements OnInit {
 
   private newClass: Class;
 
-  constructor(private appService: AppService,
+  constructor(private storageService: StorageService,
     private componentCommunicationService: ComponentCommunicationService) { }
 
   ngOnInit() {
@@ -26,8 +26,8 @@ export class NewClassComponent implements OnInit {
     c.id = UUID.UUID();
     c.name = this.newClass.name;
     c.startDate = this.newClass.startDate;
-    // this.appService.addNewClass(c).then(res => this.componentCommunicationService.newClass(c));
-    const storageServiceResponse = await this.appService.addNewClass(c);
+
+    await this.storageService.addNewClass(c);
     this.componentCommunicationService.newClass(c);
   }
 

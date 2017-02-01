@@ -3,6 +3,7 @@ import { Subscription }   from 'rxjs/Subscription';
 
 import { Teacher } from '../../../model/Teacher';
 import { AppService } from '../../../services/app.service';
+import { StorageService } from '../../../services/storage.service';
 import { ComponentCommunicationService } from '../../../services/component-communication.service';
 
 @Component({
@@ -14,7 +15,7 @@ export class ListTeachersComponent implements OnInit {
   subscription: Subscription;
   allTeachers: Teacher[];
 
-  constructor(private appService: AppService, private componentCommunicationService: ComponentCommunicationService) {
+  constructor(private storageService: StorageService, private componentCommunicationService: ComponentCommunicationService) {
     this.subscription = componentCommunicationService.teacherAdded$.subscribe(
       newTeacher => {
         this.allTeachers.push(newTeacher);
@@ -22,11 +23,11 @@ export class ListTeachersComponent implements OnInit {
   }
 
   async ngOnInit() {
-    this.allTeachers = await this.appService.getTeachers();
+    this.allTeachers = await this.storageService.getTeachers();
   }
 
   async remove(teacherToRemove) {
-    await this.appService.removeTeacher(teacherToRemove.id);
+    await this.storageService.removeTeacher(teacherToRemove.id);
     this.allTeachers = this.allTeachers.filter(t => t !== teacherToRemove);
   }
 }

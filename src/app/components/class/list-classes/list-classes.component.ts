@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Subscription }   from 'rxjs/Subscription';
 
 import { Class } from '../../../model/Class';
-import { AppService } from '../../../services/app.service';
+import { StorageService } from '../../../services/storage.service';
 import { ComponentCommunicationService } from '../../../services/component-communication.service';
 
 @Component({
@@ -14,7 +14,7 @@ export class ListClassesComponent implements OnInit {
   subscription: Subscription;
   allClasses: Class[];
 
-  constructor(private appService: AppService, private componentCommunicationService: ComponentCommunicationService) {
+  constructor(private storageService: StorageService, private componentCommunicationService: ComponentCommunicationService) {
     this.subscription = componentCommunicationService.classAdded$.subscribe(
       newClass => {
         this.allClasses.push(newClass);
@@ -22,11 +22,11 @@ export class ListClassesComponent implements OnInit {
   }
 
   async ngOnInit() {
-    this.allClasses = await this.appService.getClasses();
+    this.allClasses = await this.storageService.getClasses();
   }
 
   async remove(classToRemove) {
-    await this.appService.removeClass(classToRemove.id);
+    await this.storageService.removeClass(classToRemove.id);
     this.allClasses = this.allClasses.filter(t => t !== classToRemove);
   }
 }

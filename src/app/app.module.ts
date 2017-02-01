@@ -19,6 +19,7 @@ import { ListStudentsComponent } from './components/student/list-students/list-s
 import { NewClassComponent } from './components/class/new-class/new-class.component';
 import { ListClassesComponent } from './components/class/list-classes/list-classes.component';
 import { AppService } from './services/app.service';
+import { StorageService } from './services/storage.service';
 import { ComponentCommunicationService } from './services/component-communication.service';
 
 @NgModule({
@@ -44,7 +45,11 @@ import { ComponentCommunicationService } from './services/component-communicatio
   ],
   providers: [
     AppService,
-    ComponentCommunicationService
+    ComponentCommunicationService,
+    {
+      provide: StorageService,
+      useClass: AppService
+    }
   ],
   bootstrap: [AppComponent]
 })

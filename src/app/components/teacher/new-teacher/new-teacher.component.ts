@@ -3,6 +3,7 @@ import { UUID } from 'angular2-uuid';
 
 import { Teacher } from '../../../model/Teacher';
 import { AppService } from '../../../services/app.service';
+import { StorageService } from '../../../services/storage.service';
 import { ComponentCommunicationService } from '../../../services/component-communication.service';
 
 @Component({
@@ -14,7 +15,7 @@ export class NewTeacherComponent implements OnInit {
 
   private newTeacher: Teacher;
 
-  constructor(private appService: AppService,
+  constructor(private storageService: StorageService,
     private componentCommunicationService: ComponentCommunicationService) { }
 
   ngOnInit() {
@@ -27,7 +28,7 @@ export class NewTeacherComponent implements OnInit {
     t.name = this.newTeacher.name;
     t.joinDate = this.newTeacher.joinDate;
 
-    const storageServiceResponse = await this.appService.addNewTeacher(t);
+    await this.storageService.addNewTeacher(t);
     this.componentCommunicationService.newTeacherAdded(t);
   }
 
